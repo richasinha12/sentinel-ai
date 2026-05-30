@@ -1,19 +1,24 @@
 import { useEffect, useRef } from 'react'
 import { useSentinelStore } from '../store/sentinel'
 
+// In production (Vercel), VITE_API_URL = your Railway backend URL
+const API_BASE = import.meta.env.VITE_API_URL || ''
+const WS_BASE = import.meta.env.VITE_API_URL
+  ? import.meta.env.VITE_API_URL.replace('https://', 'wss://').replace('http://', 'ws://')
+  : `ws://${window.location.host}`
+
 export function useWebSocket() {
   const ws = useRef<WebSocket | null>(null)
   const { setWsConnected, addSignals, addInsights, updateAgentStatus, setRunning } = useSentinelStore()
 
   useEffect(() => {
     const connect = () => {
-      const socket = new WebSocket(`ws://${window.location.host}/ws`)
+      const socket = new WebSocket(`${WS_BASE}/ws`)
       ws.current = socket
-
       socket.onopen = () => setWsConnected(true)
       socket.onclose = () => {
         setWsConnected(false)
-        setTimeout(connect, 3000) // auto-reconnect
+        setTimeout(connect, 3000)
       }
       socket.onmessage = (e) => {
         const msg = JSON.parse(e.data)
@@ -30,4 +35,8 @@ export function useWebSocket() {
     connect()
     return () => ws.current?.close()
   }, [])
+
+  return API_BASE
 }
+
+export { API_BASE }
