@@ -22,6 +22,7 @@ class Settings(BaseSettings):
     REDIS_URL: str = "redis://localhost:6379"
     SECRET_KEY: str = "change_me"
     CORS_ORIGINS: str = "http://localhost:3000"
+    DEMO_MODE: bool = True  # Set False when real API keys are configured
 
 
 settings = Settings()

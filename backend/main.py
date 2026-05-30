@@ -99,12 +99,18 @@ async def run_agents(req: RunRequest, db: AsyncSession = Depends(get_db)):
             "signals": [s.model_dump(mode="json") for s in result.signals],
         })
 
-    results, insights = await run_all(
-        gtm_targets=req.competitors,
-        finance_companies=req.customers,
-        security_vendors=req.vendors,
-        on_agent_done=on_agent_done,
-    )
+    if settings.DEMO_MODE:
+        from backend.demo_mode import demo_run_all
+        results, insights = await demo_run_all()
+        for r in results:
+            await on_agent_done(r)
+    else:
+        results, insights = await run_all(
+            gtm_targets=req.competitors,
+            finance_companies=req.customers,
+            security_vendors=req.vendors,
+            on_agent_done=on_agent_done,
+        )
 
     # Persist insights
     for ins in insights:

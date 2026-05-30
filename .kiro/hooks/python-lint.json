@@ -1,0 +1,15 @@
+{
+  "name": "python-lint",
+  "description": "Auto-check Python files for import errors and type issues on save",
+  "trigger": {
+    "event": "file_save",
+    "pattern": "backend/**/*.py"
+  },
+  "steps": [
+    {
+      "name": "Check syntax",
+      "command": "python -m py_compile ${file}",
+      "on_error": "warn"
+    }
+  ]
+}

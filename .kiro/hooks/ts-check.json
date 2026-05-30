@@ -1,0 +1,15 @@
+{
+  "name": "ts-check",
+  "description": "TypeScript type-check frontend files on save",
+  "trigger": {
+    "event": "file_save",
+    "pattern": "frontend/src/**/*.{ts,tsx}"
+  },
+  "steps": [
+    {
+      "name": "Type check",
+      "command": "cd frontend && npx tsc --noEmit",
+      "on_error": "warn"
+    }
+  ]
+}

@@ -1,0 +1,15 @@
+{
+  "name": "agent-test-on-change",
+  "description": "Run agent unit tests whenever an agent file is modified",
+  "trigger": {
+    "event": "file_save",
+    "pattern": "backend/agents/*.py"
+  },
+  "steps": [
+    {
+      "name": "Run agent tests",
+      "command": "python -m pytest tests/test_agents.py -x -q --tb=short",
+      "on_error": "warn"
+    }
+  ]
+}
