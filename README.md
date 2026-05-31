@@ -19,6 +19,16 @@ Built entirely with **Kiro CLI** for the hackathon.
 Companies pay **$13,500+/month** across 5+ siloed tools that never talk to each other.  
 Sentinel replaces all of them for **$500/month** — and connects the dots between them.
 
+
+What It Is
+A 24/7 autonomous AI agent that monitors the web across sales, finance, and security — and automatically alerts the right team when something important happens.
+Problem
+Companies pay $13,500+/month across 5+ siloed tools that never talk to each other. Sentinel replaces all of them for $500/month and connects the dots between them.
+3 Agents, Running Silently in Background
+GTM Agent — Watches competitor pricing, product updates, job postings, G2 reviews → Auto-updates CRM, sends sales talking points, flags affected deals
+Finance Agent — Watches customer layoffs, leadership changes, hiring trends → Calculates churn risk score, alerts Customer Success, generates retention playbook
+Security Agent — Watches vendor breaches, regulatory changes, credential leaks → Generates incident report, creates compliance ticket, drafts customer notification
+
 ---
 
 ## Architecture
