@@ -154,7 +154,7 @@ Open http://localhost:3000
 
 ---
 
-## Prize Track Alignment
+## Technology Track Alignment
 
 | Track | How Sentinel Qualifies |
 |-------|----------------------|
