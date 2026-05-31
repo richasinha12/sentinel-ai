@@ -1,6 +1,14 @@
-# 🛡️ Sentinel AI — Unified Multi-Agent Intelligence Platform
+# 🛡️ Sentinel AI — Unified Autonomous Multi-Agent Intelligence Platform for Enterprise Operations
 
-> **24/7 autonomous AI that monitors the web across sales, finance, and security — and automatically alerts the right team when something important happens.**
+> **Sentinel AI is a 24/7 autonomous multi-agent intelligence platform that unifies sales, finance, and security operations into a single system. It continuously monitors the web, detects critical events, and delivers real-time insights and alerts to relevant teams, helping organizations replace fragmented tool stacks costing $13.5K+/month with a unified $500/month solution.
+
+The system uses specialized agents: GTM (Mistral-7B for entity extraction), Finance (Phi-3-mini for numerical reasoning), and Security (Llama-3-8B for threat classification), powered by Bright Data for web data acquisition and Featherless AI for scalable open-source inference.
+
+A Cross-Agent Synthesis Engine (Claude Opus + Cognee) connects insights across domains using memory and knowledge graphs to uncover non-obvious business correlations.
+
+Automated workflows via TriggerWare convert insights into action—pushing GTM signals to CRMs, triggering churn alerts (>60) with retention playbooks, and creating security incident tickets and customer notifications.
+
+Impact: Reduces tool fragmentation, improves decision speed, and enables real-time, cross-functional intelligence for faster, data-driven business actions.**
 
 Built entirely with **Kiro CLI** for the hackathon.
 
